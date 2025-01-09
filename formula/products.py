@@ -1,6 +1,6 @@
-def  updateQuantityInventory(stok, quantity):
+def  updateQuantityInventory(stock, quantity):
     if(quantity > 0):
-        stok = stok + quantity
-        return stok
+        stock = stock + quantity
+        return stock
     else:
-        return stok
+        return stock
