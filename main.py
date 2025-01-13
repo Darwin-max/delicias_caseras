@@ -1,16 +1,13 @@
-from design.products import design, tableProducts, tableProductsBycategory
-from logic.products import updateInventoryByCode, addNewProduct
+from design.products import desing as desingProducts, tableProducts, tableProductsByCategory, tableProductsByName, tableProductsByCode, formularyAddProduct
+from logic.products import updateInventoryByCode
+from  design.customer import designClient as desingCustomer, formularyTakeOrder, tableOrders
 
-match design():
-    case 1 : 
-        tableProducts()
-    case 2 : 
-        tableProductsBycategory(input("Ingrese la categoria ejemplo (panes, pàstel o postres)"))
-    case 3 :
-        updateInventoryByCode(input("Ingrese el codigo de producto ejemplo (PN-001): "))
-    case 4:
-        addNewProduct()
+match desingCustomer():
+    case 0:
+        print("¡Hasta luego!")
+    case 1:
+        formularyTakeOrder()
+    case 2:
+        tableOrders()
     case _:
-        print("Esa obcion no existe")
-
-        
+        print("Esa opcion no existe")

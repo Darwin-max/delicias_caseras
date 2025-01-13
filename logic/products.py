@@ -1,7 +1,9 @@
 from formula.products import updateQuantityInventory
 from tabulate import tabulate
 import json
-def findall():
+
+
+def findAll():
     with open("data/products.json", "r", encoding="utf-8") as file :
         data = file.read()
         converted = json.loads(data)
@@ -20,7 +22,7 @@ def add_product(data, new_product):
   return data
         
 def updateInventoryByCode(code_product):
-    data = findall()
+    data = findAll()
     for product in data:
         if(product.get('codigo_producto') == code_product):
             quantity = int(input("Ingrese la cantidad de productos que desea actualizar: "))
@@ -43,7 +45,7 @@ def addNewProduct():
   new_product["precio_proveedor"] = float(input("Ingrese el precio del proveedor: "))
   
   # Obtener los datos existentes del JSON
-  data = findall()
+  data = findAll()
 
   # Agregar el nuevo producto al JSON
   data = add_product(data, new_product)
